@@ -1,0 +1,79 @@
+.env.dist
+docker-compose.yml
+
+.idea
+sftp-config.json
+*.sublime-project
+*.sublime-workspace
+/nbproject/private/
+/.buildpath
+/.project
+/.settings
+/certificados/
+/web/media/cache/
+web/media/cache/*
+.nbproject
+nbproject/*
+.DS_Store
+.phpintel
+.phpintel/*
+.DS_Store
+bower_components
+bower_components/*
+composer.lock
+vendor/bin
+vendor/*
+cache.properties
+.sass-cache/
+*.tar.gz
+node_modules/*
+npm-debug.log
+*.db
+data/*
+.metadata
+.vscode/*
+/web/guias_anexos/*
+/id_rsa
+/id_rsa.pub
+vendor
+/vendor/
+vendor/*
+*.code-workspace
+ocular.phar
+auth.json
+###> symfony/framework-bundle ###
+/.env
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> symfony/phpunit-bridge ###
+.phpunit
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+
+###> symfony/web-server-bundle ###
+/.web-server-pid
+###< symfony/web-server-bundle ###
+docker-compose.yml
+apache_vhost
+database/data
+symfony.lock
+
+###> medtrainer ###
+templates/temp/*
+/templates/temp/*
+###> squizlabs/php_codesniffer ###
+/.phpcs-cache
+/phpcs.xml
+###< squizlabs/php_codesniffer ###
+phpunit.xml
+###> phpunit/phpunit ###
+/phpunit.xml
+###< phpunit/phpunit ###
+
+
+###> database ###
+database/data
+###< database ###

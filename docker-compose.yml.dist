@@ -1,0 +1,44 @@
+version: '2'
+services:
+  web:
+    image: medtrainerphp:7.2
+    networks:
+      symfony_4_net:
+        ipv4_address: 172.22.26.09
+    ports:
+      - "8097:80"
+      - "443:443"
+    environment:
+      PHP_XDEBUG_ENABLED: 1
+      XDEBUG_CONFIG: remote_host=172.22.26.1
+      PHP_IDE_CONFIG: "serverName=Symfony"
+    volumes:
+      - ./src:/var/www/html
+      - ./apache_vhost:/etc/apache2/sites-available/
+      - ./swapfiles:/swapfiles
+    links:
+      - mysql
+    container_name: ${PROJECT_NAME}_web
+  mysql:
+    image: mysql:5.7
+    networks:
+      symfony_4_net:
+        ipv4_address: 172.22.26.11
+    volumes:
+      - ./database/data:/var/lib/mysql
+    ports:
+       - 3311:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+      - MYSQL_DATABASE=${DB_NAME}prd
+    container_name: ${PROJECT_NAME}_db
+networks:
+  symfony_4_net:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "false"
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.22.26.0/24
+          gateway: 172.22.26.1
