@@ -1,8 +1,14 @@
 {
     "devDependencies": {
         "@symfony/webpack-encore": "^0.26.0",
-        "front-widgets": "git+ssh://bitbucket.org/medtrainerdevelopment/front-widgets.git",
         "core-js": "^3.0.0",
+        "front-widgets": "git+ssh://bitbucket.org/medtrainerdevelopment/front-widgets.git",
+        "node-sass": "^4.11.0",
+        "sass-loader": "^7.1.0",
+        "ts-loader": "^5.3.3",
+        "typescript": "^3.4.2",
+        "vue-loader": "^15.7.0",
+        "vue-template-compiler": "^2.6.10",
         "webpack-notifier": "^1.6.0"
     },
     "license": "UNLICENSED",
