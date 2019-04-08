@@ -11,13 +11,17 @@ require('../vendor/medtrainer/admincore-bundle/Resources/assets/admin-core.scss'
 // Need jQuery? Install it with "yarn add jquery", then uncomment to require it.
 // const $ = require('jquery');
 
+import DT from 'front-widgets/src/components/DataTable';
+DT.load = function () {
 
+};
 var app = new Vue({
     el: '#app',
     data: {
         message: 'Hello Vue!'
     },
     components: {
-        'data-table': import('front-widgets/src/components/DataTable.vue')
+        // 'data-table': import('front-widgets/src/components/DataTable')
+        'data-table': DT
     }
 });

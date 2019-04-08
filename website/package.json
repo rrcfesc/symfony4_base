@@ -28,5 +28,9 @@
         "dev": "encore dev",
         "watch": "encore dev --watch",
         "build": "encore production --progress"
+    },
+    "dependencies": {
+        "datatables.net": "^1.10.19",
+        "postinstall-build": "^5.0.3"
     }
 }
