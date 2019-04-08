@@ -6,7 +6,6 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "doctrine/doctrine-bundle": "^1.9",
-        "medtrainer/admincore-bundle": "dev-master",
         "friendsofsymfony/user-bundle": "~2.0",
         "sensio/framework-extra-bundle": "^5.2",
         "symfony/asset": "^4.2",
@@ -20,7 +19,7 @@
         "symfony/swiftmailer-bundle": "^3.2",
         "symfony/translation": "^4.2",
         "symfony/twig-bundle": "^4.2",
-        "symfony/webpack-encore-pack": "^1.0",
+        "symfony/webpack-encore-bundle": "^1.4",
         "symfony/yaml": "4.2.*"
     },
     "repositories": [
