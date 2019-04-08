@@ -1,0 +1,1 @@
+require('../vendor/medtrainer/admincore-bundle/Resources/assets/admin-core-extensions.scss');
