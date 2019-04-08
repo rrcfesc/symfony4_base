@@ -2,9 +2,9 @@ var Encore = require('@symfony/webpack-encore');
 
 Encore
 // the project directory where compiled assets will be stored
-    .setOutputPath('public/bundles/admincore/')
-    // the public path used by the web server to access the previous directory
-    .setPublicPath('/bundles/admincore/')
+    .setOutputPath('public/build/')
+    // public path used by the web server to access the output path
+    .setPublicPath('/build')
     // delete old files before creating them
     .cleanupOutputBeforeBuild()
     // add debug data in development
@@ -13,7 +13,6 @@ Encore
     .enableVersioning(Encore.isProduction())
     // generate only two files: app.js and app.css
     .addEntry('admincore', './assets/app.js')
-    .addEntry('qc', './assets/integra.js')
     // enable sass/scss parser
     .enableSassLoader()
     // .enableVueLoader()
@@ -24,8 +23,9 @@ Encore
     // for "legacy" applications that require $/jQuery as a global variable
     .autoProvidejQuery()
     .enableVueLoader()
+
     .enableTypeScriptLoader()
-    // see https://symfony.com/doc/current/frontend/encore/bootstrap.html
+
     .enableSassLoader(function(sassOptions) {}, {
         resolveUrlLoader: false
     })
