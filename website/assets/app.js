@@ -21,7 +21,6 @@ var app = new Vue({
         message: 'Hello Vue!'
     },
     components: {
-        // 'data-table': import('front-widgets/src/components/DataTable')
         'data-table': DT
     }
 });
