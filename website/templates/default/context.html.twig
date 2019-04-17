@@ -4,10 +4,10 @@
 #}
 
 {% block page_title %}Twig Context Helper{% endblock %}
-{% block page_subtitle %}available AdminLTE configurations{% endblock %}
+{% block page_subtitle %}available Layout configurations{% endblock %}
 
 {% block page_content %}
-    {% import "@AdminLTE/Macros/default.html.twig" as macro %}
+    {% import "@Layout/Macros/default.html.twig" as macro %}
 
     <div class="row">
         <div class="col-md-12">
@@ -26,25 +26,25 @@
         <div class="col-md-12">
             <h3>Some code examples</h3>
 
-            <p>Dump the AdminLTE context:</p>
+            <p>Dump the Layout context:</p>
             <pre>
                 {%- verbatim -%}
-{{ dump(admin_lte_context) }}
+{{ dump(layout_context) }}
                 {%- endverbatim -%}
             </pre>
 
             <p>Display a user avatar:</p>
             <pre>
                 {%- verbatim -%}
-{% import "@AdminLTE/Macros/default.html.twig" as macro %}
-{{ macro.avatar(admin_lte_context.default_avatar, 'Username')  }}
+{% import "@Layout/Macros/default.html.twig" as macro %}
+{{ macro.avatar(layout_context.default_avatar, 'Username')  }}
                 {%- endverbatim -%}
             </pre>
 
             <p>Check for a config setting:</p>
             <pre>
                 {%- verbatim -%}
-{% if admin_lte_context.fixed_layout %}
+{% if layout_context.fixed_layout %}
     Show a fixed layout
 {% endif %}
                 {%- endverbatim -%}
