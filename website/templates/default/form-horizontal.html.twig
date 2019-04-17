@@ -10,14 +10,14 @@
 {% block avanzu_page_content %}
     <div class="row">
         <div class="col-md-12">
-            {% embed '@AdminLTE/Widgets/box-widget.html.twig' %}
-                {% form_theme form '@AdminLTE/layout/form-theme-horizontal.html.twig' %}
+            {% embed '@Layout/Widgets/box-widget.html.twig' %}
+                {% form_theme form '@Layout/layout/form-theme-horizontal.html.twig' %}
                 {% block box_before %}{{ form_start(form) }}{% endblock %}
                 {% block box_title %}{{ 'A horizontal form demo'|trans }}{% endblock %}
                 {% block box_body %}
                     <p>
                     Using the additional horizontal form theme:
-                    <pre>{% verbatim %}{% form_theme form '@AdminLTE/layout/form-theme-horizontal.html.twig' %}{% endverbatim %}</pre>
+                    <pre>{% verbatim %}{% form_theme form '@Layout/layout/form-theme-horizontal.html.twig' %}{% endverbatim %}</pre>
                     </p>
                     <p>
                         Submit the form to see validation errors...
