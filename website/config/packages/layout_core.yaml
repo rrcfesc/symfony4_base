@@ -10,15 +10,10 @@ layout_core:
     default_avatar: bundles/layoutcore/images/default_avatar.png
     # the color skin
     skin: skin-blue
-    
+ 
   routes:
-    layoutcore_welcome: index
-    layoutcore_login: index
-    layoutcore_login_check: index
-    layoutcore_message: index
-    layoutcore_messages: index
-    layoutcore_notification: index
-    layoutcore_notifications: index
-    layoutcore_task: index
-    layoutcore_tasks: index
-    layoutcore_profile: index
+    layoutcore_login: welcome
+    layoutcore_login_check: welcome
+    layoutcore_profile: welcome
+    layoutcore_welcome: welcome
+ 
