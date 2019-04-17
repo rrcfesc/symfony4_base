@@ -4,7 +4,7 @@ fos_user:
     user_class: App\Entity\User
     from_email:
         address: "demo@example.com"
-        sender_name: "AdminLTE Demo"
+        sender_name: "Layout Demo"
     registration:
         confirmation:
             enabled: false

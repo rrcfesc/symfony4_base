@@ -2,7 +2,7 @@
     "devDependencies": {
         "@fortawesome/fontawesome-free": "~5.1.1",
         "@symfony/webpack-encore": "^0.26.0",
-        "front-widgets": "git+ssh://bitbucket.org/medtrainerdevelopment/front-widgets.git",
+        "front-widgets": "git+ssh://bitbucket.org/medtrainerdevelopment/mt-front.git",
         "bootstrap-sass": "^3.3.7",
         "bootstrap-select": "^1.13.1",
         "chart.js": "~2.7.2",
