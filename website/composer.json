@@ -6,8 +6,6 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "doctrine/doctrine-bundle": "^1.9",
-        "medtrainer/layoutcore-bundle": "dev-master",
-        "friendsofsymfony/user-bundle": "~2.0",
         "sensio/framework-extra-bundle": "^5.2",
         "symfony/asset": "^4.2",
         "symfony/console": "^4.2",
@@ -15,20 +13,15 @@
         "symfony/flex": "^1.0",
         "symfony/form": "^4.2",
         "symfony/framework-bundle": "^4.2",
+        "symfony/maker-bundle": "^1.11",
         "symfony/orm-pack": "^1.0",
-        "symfony/security-bundle": "^4.2",
+        "symfony/security-bundle": "4.2.*",
         "symfony/swiftmailer-bundle": "^3.2",
         "symfony/translation": "^4.2",
         "symfony/twig-bundle": "^4.2",
         "symfony/webpack-encore-bundle": "^1.4",
         "symfony/yaml": "4.2.*"
     },
-    "repositories": [
-        {
-            "url": "https://bitbucket.org/medtrainerdevelopment/mt-layout.git",
-            "type": "git"
-        }
-    ],
     "config": {
         "preferred-install": {
             "*": "dist"

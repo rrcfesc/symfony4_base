@@ -1,74 +1,100 @@
 <?php
 
-/*
- * This file is part of the AdminLTE-Bundle demo.
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
-
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use FOS\UserBundle\Model\User as BaseUser;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-use Symfony\Component\Security\Core\User\EquatableInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
- * Application main User entity.
- *
- * @ORM\Entity
- * @ORM\Table(
- *      name="users",
- *      uniqueConstraints={
- *          @ORM\UniqueConstraint(columns={"username"}),
- *          @ORM\UniqueConstraint(columns={"email"})
- *      }
- * )
- * @UniqueEntity("username")
- * @UniqueEntity("email")
+ * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User extends BaseUser implements UserInterface, EquatableInterface
+class User implements UserInterface
 {
     /**
-     * @var int
-     *
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id()
+     * @ORM\GeneratedValue()
+     * @ORM\Column(type="integer")
      */
-    protected $id;
+    private $id;
 
     /**
-     * Checks if the user has to be logged out of the session,
-     * due to changed fields / security related settings (like roles and teams).
-     *
-     * @param UserInterface $user
-     * @return bool
+     * @ORM\Column(type="string", length=180, unique=true)
      */
-    public function isEqualTo(UserInterface $user)
+    private $email;
+
+    /**
+     * @ORM\Column(type="json")
+     */
+    private $roles = [];
+
+    public function getId(): ?int
     {
-        if (!($user instanceof User)) {
-            return false;
-        }
+        return $this->id;
+    }
 
-        if ($this->getUsername() !== $user->getUsername()) {
-            return false;
-        }
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
 
-        if ($this->getEmail() !== $user->getEmail()) {
-            return false;
-        }
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
 
-        if (count($this->getRoles()) !== count($user->getRoles())) {
-            return false;
-        }
+        return $this;
+    }
 
-        if (count(array_diff($this->getRoles(), $user->getRoles())) !== 0) {
-            return false;
-        }
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUsername(): string
+    {
+        return (string) $this->email;
+    }
 
-        return true;
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): self
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getPassword()
+    {
+        // not needed for apps that do not check user passwords
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getSalt()
+    {
+        // not needed for apps that do not check user passwords
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials()
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
     }
 }
