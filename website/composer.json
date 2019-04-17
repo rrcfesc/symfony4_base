@@ -6,7 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "doctrine/doctrine-bundle": "^1.9",
-        "medtrainer/admincore-bundle": "dev-master",
+        "medtrainer/layoutcore-bundle": "dev-master",
         "friendsofsymfony/user-bundle": "~2.0",
         "sensio/framework-extra-bundle": "^5.2",
         "symfony/asset": "^4.2",
